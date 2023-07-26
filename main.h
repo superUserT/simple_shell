@@ -17,6 +17,6 @@ void exit_shell(char *buffer);
 extern char **environ;
 char **div_buffer(char *buffer);
 void execute(char **arrp);
-void sigHandler(int num);
+void sighandler(int num);
 
 #endif /* MAIN_H */

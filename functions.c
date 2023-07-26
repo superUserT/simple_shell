@@ -43,16 +43,16 @@ void print_shell(char *s)
 
 void env_shell(char **arrp)
 {
+	int count1;
+	int count2;
+
 	if (_strcmp(arrp[0], "env") == 0)
 	{
-		int counter1;
-		int counter1;
-
-		for (counter1 = 0; environ[counter1] != NULL; counter1++)
+		for (count1 = 0; environ[count1] != NULL; count1++)
 		{
-			for (counter2 = 0; environ[counter1][counter2] != '\0'; counter2++)
+			for (count2 = 0; environ[count1][count2] != '\0'; count2++)
 			{
-				write(STDOUT_FILENO, &environ[counter1][counter2], 1);
+				write(STDOUT_FILENO, &environ[count1][count2], 1);
 				write(STDOUT_FILENO, "\n", 1);
 			}
 		}

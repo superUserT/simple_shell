@@ -9,7 +9,7 @@
 
 int main(void)
 {
-	signal(SIGINT, sigHandler);
+	signal(SIGINT, sighandler);
 
 	while (1)
 	{
@@ -18,7 +18,6 @@ int main(void)
 		print_shell(st);
 
 		char *buffer = NULL;
-
 		size_t bufsize = BUFSIZE_sh;
 		int buf;
 
@@ -29,6 +28,7 @@ int main(void)
 			perror("Unable to allocate buffer");
 			exit(1);
 		}
+
 		buf = getline(&buffer, &bufsize, stdin);
 
 		if (buf == EOF)
@@ -37,15 +37,12 @@ int main(void)
 			exit(0);
 		}
 		exit_shell(buffer);
-
 		char **arrp = div_buffer(buffer);
 
 		execute(arrp);
 
 		if (arrp && arrp[0])
-		{
 			env_shell(arrp);
-		}
-		return (0);
 	}
+	return (0);
 }
