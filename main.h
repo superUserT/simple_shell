@@ -9,14 +9,14 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
-void env_sh(char **arrp);
-int _strcmp(char *str1, char *str2);
-void print_sh(char *s);
+void env_shell(char **arrp);
+int _strcmp(char *s1, char *s2);
+void print_shell(char *s);
 int _strlen(char *c);
-void exit_sh(char *buffer);
+void exit_shell(char *buffer);
 extern char **environ;
-char **divide_buffer(char *buffer);
+char **div_buffer(char *buffer);
 void execute(char **arrp);
-void sigintHandler(int num);
+void sigHandler(int num);
 
-#endif
+#endif /* MAIN_H */
