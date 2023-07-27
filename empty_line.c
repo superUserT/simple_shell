@@ -2,8 +2,8 @@
 
 /**
  * empty - Checks if a line exits or not
- * @buffer: the line to be checked
- * Return: 0
+ * @buff: the line to be checked using a buffer character
+ * Return: 0 if char exists, 1 if it doesnt
  */
 
 int empty(char *buff)

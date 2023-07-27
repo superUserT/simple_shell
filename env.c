@@ -1,19 +1,18 @@
 #include "main.h"
 
 /**
- * _getenv - get environment variables
+ * _getenv - gets the environment variables
  * @envvar: environment variable
  * Return: the result of the environment and its content
  */
 
 char *_getenv(char *envvar)
 {
-	int a = 0, b;
-	int stat;
+	int a = 0, b, stat;
 
 	while (environ[a])
 	{
-		stat = -1;
+		stat = 1;
 
 		for (b = 0; environ[a][b] != '='; b++)
 		{
