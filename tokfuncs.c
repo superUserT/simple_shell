@@ -11,10 +11,11 @@ char **div_buffer(char *buffer)
 {
 	char **arrp;
 	int j = 0;
+	char *symbol;
 
 	arrp = malloc(sizeof(buffer));
 
-	char *symbol = strtok(buffer, "\n");
+	symbol = strtok(buffer, "\n");
 
 	symbol = strtok(symbol, DEL);
 	arrp[0] = symbol;

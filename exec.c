@@ -6,7 +6,7 @@
  * Return: exit status
  */
 
-void execute(char **arrp)
+int execute(char **arrp)
 {
 	int id = fork(), status;
 
@@ -21,7 +21,7 @@ void execute(char **arrp)
 
 		if (WIFEXITED(status))
 		{
-			status = WEITSTATUS(status);
+			status = WEXITSTATUS(status);
 		}
 	}
 	return (status);

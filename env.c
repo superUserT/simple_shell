@@ -17,7 +17,7 @@ char *_getenv(char *envvar)
 
 		for (b = 0; environ[a][b] != '='; b++)
 		{
-			if (environ[a][b] != envvar[j])
+			if (environ[a][b] != envvar[b])
 			{
 				stat = 0;
 			}

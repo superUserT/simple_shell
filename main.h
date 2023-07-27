@@ -17,7 +17,7 @@ int _strlen(char *c);
 void exit_shell(char *buffer);
 extern char **environ;
 char **div_buffer(char *buffer);
-void execute(char **arrp);
+int execute(char **arrp);
 void sighandler(int num);
 
 char *_strcpy(char *dest, char *src);
@@ -28,7 +28,7 @@ char *_getenv(char *envvar);
 void *_calloc(unsigned int nmember, unsigned int size);
 void _env(void);
 int execute(char **args);
-int empty(char *buffer);
+int empty(char *buff);
 
 
 #endif /* MAIN_H */

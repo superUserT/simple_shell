@@ -6,13 +6,13 @@
  * Return: 0
  */
 
-int empty(char *buffer)
+int empty(char *buff)
 {
 	int j;
 
-	for (j = 0; buffer[j] != "\0"; j++)
+	for (j = 0; buff[j] != '\0'; j++)
 	{
-		if (buffer[j] != " ")
+		if (buff[j] != ' ')
 		{
 			return (0);
 		}

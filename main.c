@@ -1,48 +1,48 @@
 #include "main.h"
-#define BUFSIZE_sh 32
-#define PROMPT "#cisfun$ "
 
 /**
- * main - Entry point
- * Return: return (0)
+ * main - open the shell
+ * Return: void or nothing
  */
 
 int main(void)
 {
-	signal(SIGINT, sighandler);
+	char *buff = NULL, **args;
+	size_t read_size = 0;
+	ssize_t buff_size = 0;
+	int exit_status = 0;
 
 	while (1)
 	{
-		char *st = PROMPT;
-
-		print_shell(st);
-
-		char *buffer = NULL;
-		size_t bufsize = BUFSIZE_sh;
-		int buf;
-
-		buffer = (char *)malloc(bufsize * sizeof(char));
-
-		if (buffer == NULL)
+		if (isatty(0))
 		{
-			perror("Unable to allocate buffer");
-			exit(1);
+			printf("#cisfun$ ");
 		}
-
-		buf = getline(&buffer, &bufsize, stdin);
-
-		if (buf == EOF)
+		buff_size = getline(&buff, &read_size, stdin);
+		if (buff_size == -1 || _strcmp("exit\n", buff) == 0)
 		{
-			write(STDOUT_FILENO, "\n", 1);
-			exit(0);
+			free(buff);
+			break;
 		}
-		exit_shell(buffer);
-		char **arrp = div_buffer(buffer);
+		buff[buff_size - 1] = '\0';
+		if (_strcmp("env", buff) == 0)
+		{
+			_env();
+			continue;
+		}
+		if (empty(buff) == 1)
+		{
+			exit_status = 0;
+			continue;
+		}
+		args = _split(buff, " ");
+		args[0] = search_path(args[0]);
 
-		execute(arrp);
-
-		if (arrp && arrp[0])
-			env_shell(arrp);
+		if (args[0] != NULL)
+			exit_status = execute(args);
+		else
+			perror("Error");
+		free(args);
 	}
-	return (0);
+	return (exit_status);
 }
