@@ -8,6 +8,7 @@
 #include <dirent.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <sys/stat.h>
 
 void env_shell(char **arrp);
 int _strcmp(char *s1, char *s2);
@@ -18,5 +19,16 @@ extern char **environ;
 char **div_buffer(char *buffer);
 void execute(char **arrp);
 void sighandler(int num);
+
+char *_strcpy(char *dest, char *src);
+char *search_path(char *command);
+char **_split(char *str, char *sep);
+char *_strcat(char *dest, char *src);
+char *_getenv(char *envvar);
+void *_calloc(unsigned int nmember, unsigned int size);
+void _env(void);
+int execute(char **args);
+int empty(char *buffer);
+
 
 #endif /* MAIN_H */
