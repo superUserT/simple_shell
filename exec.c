@@ -3,21 +3,26 @@
 /**
  * execute - function that executes a program and waits for input
  * @arrp: character type, pointer
- * Return: void
+ * Return: exit status
  */
 
 void execute(char **arrp)
 {
-	pid_t pid;
+	int id = fork(), status;
 
-	pid = fork();
-
-	if (pid == 0)
+	if (id == 0)
 	{
-		execve(arrp[0], arrp, NULL);
-		perror("error: Process child does not exist.");
-		exit(1);
+		if (execve(arrp[0], arrp, environ) == -1)
+			perror("error: Process child does not exist.");
 	}
 	else
-		wait(0);
+	{
+		wait(&status);
+
+		if (WIFEXITED(status))
+		{
+			status = WEITSTATUS(status);
+		}
+	}
+	return (status);
 }
