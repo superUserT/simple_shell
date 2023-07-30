@@ -19,7 +19,7 @@ Write a simple UNIX command interpreter.
 
 ![](https://i.imgur.com/W2FMyP0.jpg)
 
-*^ "The Beautiful C Program That Creates a 3D Rotating Donut")*
+* "The Beautiful C Program That Creates a 3D Rotating Donut")*
 
 Resources
 ---------
@@ -71,10 +71,6 @@ Requirements
 -   No more than 5 functions per file
 -   All your header files should be include guarded
 -   Use system calls only when you need to ([why?](https://alx-intranet.hbtn.io/rltoken/EU7B1PTSy14INnZEShpobQ "why?"))
-
-### GitHub
-
-**There should be one project repository per group. If you clone/fork/whatever a project repository with the same name before the second deadline, you risk a 0% score.**
 
 More Info
 ---------
