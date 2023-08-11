@@ -233,7 +233,7 @@ env-environ.c  exec    fork    mypid   ppid   printenv  promptc  shell     stat 
 ```
 
 **Repo:**
-![](https://drive.google.com/file/d/1w0oIk2k1Qbb7cTLFe5prAW5o77t9GD3i/view?usp=drive_link)
+![](https://drive.google.com/file/d/1w0oIk2k1Qbb7cTLFe5prAW5o77t9GD3i/view?usp=sharing)
 -   GitHub repository: `simple_shell`
 
 ### 7\. What happens when you type `ls -l *.c` in the shell
